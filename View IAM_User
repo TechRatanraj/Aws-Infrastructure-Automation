@@ -1,0 +1,11 @@
+import boto3 
+#this is the python framework or sdk library 
+
+aws_management_console = boto3.session.Session(profile_name="default")
+#This is normal variable like navigation via GUI
+iam_console = aws_management_console.resource('iam')
+#view the IAM user 
+for each_user in iam_console.users.all():
+   print(each_user.name)
+
+# For loop 
